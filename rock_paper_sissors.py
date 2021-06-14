@@ -11,7 +11,7 @@ def on_gesture_shake():
             . # # # .
             . # # # .
             """)
-    if hand == 2:
+    elif hand == 2:
         basic.show_leds("""
             . . . . .
             . # # # .
@@ -19,12 +19,12 @@ def on_gesture_shake():
             # # # # #
             . . . . .
             """)
-    if hand == 3:
+    else:
         basic.show_leds("""
-            . . . # .
-            . . # . #
+            # # . . #
             # # . # .
-            # . # . .
-            # # # . .
+            . . # . .
+            # # . # .
+            # # . . #
             """)
 input.on_gesture(Gesture.SHAKE, on_gesture_shake)
