@@ -11,6 +11,10 @@ def menu_call(): #Definition created as the menu.
         time.sleep(4) #Using the import time function, I could pause the programe for 4 seconds.
         tickets() #This calls the tickets definition.
 
+    if menu_option == 3: #If a users types in 3 as their answer, the menu would call the ticket_win definition.
+        print("You will be directed to the oppitunity to win a free ticket.")
+        time.sleep(1) #Using the import time function, I could pause the programe for 4 seconds.
+        ticket_win() #This calls the tickets definition.
     else:
         print("Your input was wrong, please try again")
 
@@ -66,10 +70,28 @@ Seniors (anyone aged aboved 60) = $10 (A discount)
     return()
 
 
+def ticket_win():
+    guess = 3
+    while guess >= 1:
+            num_guess = float(input("How many students approximitly are at Henderson High School? "))
+            if num_guess == 1000:
+                print("You correct, add code 'I won' to the checkout.")
+                print("Thanks for playing.")
+                menu_call()
+            else:
+                print("Sorry wrong, please try again")
+                guess -= 1
+                print("You have {} tries remaining".format(guess))
+                continue
+    else:
+            print("Sorry, you failed")
+            menu_call()
+
+
 #MAIN SCRIPT BELOW -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 name = input("Hello, what is your name? ") #This is an imput so the script can be personalized according to their name.
 print("Hello {}, welcome to Henderson High School's Production.".format(name)) #An input to greet them on to the python system.
 menu_call() #Calling the menu definition as its the users first time.
-purchase_request("If you would like to purchase these tickets please type 'purchase' or 'no'")
+
 
