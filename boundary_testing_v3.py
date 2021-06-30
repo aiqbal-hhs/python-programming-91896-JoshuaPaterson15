@@ -4,7 +4,6 @@ import time #Importing time to use the pause/sleep function.
 def age_check():
 
     age_request = float(input("Please insert your age to verify if you are eligable to purchase tickets on this script? "))
-    a = 15
     b = age_request
 
     if b > 15:
@@ -81,9 +80,24 @@ Seniors (anyone aged aboved 60) = $10 (A discount)
 
     """.format(childe_tickets_total, child_tickets_total, adult_tickets_total, senior_tickets_total)) #This is the total prices based on the users request and is printed per catagory to outline the users request.
     print("Your total is ${} for all your tickets to Henderson High School's Production".format(grand_total)) #This is the overall total price when all the totals are calculated together.
-    return()
+    payment()
 
-
+def payment():
+    payment_option = str(input("How you would like to pay, we accept Cash, Bank Transfer or Debit Cards? ")).lower()
+    if payment_option ==  "cash":
+       print("Please pay when you arrive at the production.")
+       print("When you arrive, please indicate your order number.")
+       
+    if payment_option == "bank transfer":
+        print("Option 1")
+        
+    if payment_option == "debit card":
+        print("Option 2")
+        
+    else:
+        print("Sorry")
+        menu_call()
+        
 def ticket_win():
     guess = 3
     while guess >= 1:
@@ -108,4 +122,5 @@ def ticket_win():
 name = input("Hello, what is your name? ") #This is an imput so the script can be personalized according to their name.
 print("Hello {}, welcome to Henderson High School's Production.".format(name)) #An input to greet them on to the python system.
 age_check()
+payment()
 
