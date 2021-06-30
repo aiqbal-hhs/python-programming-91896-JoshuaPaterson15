@@ -1,5 +1,19 @@
 import time #Importing time to use the pause/sleep function.
 
+
+def age_check():
+
+    age_request = float(input("Please insert your age to verify if you are eligable to purchase tickets on this script? "))
+    a = 15
+    b = age_request
+
+    if b > 15:
+      print("Your eligable for purchasing ticket using this script.")
+      menu_call()
+    else:
+      print("We are sorry, your not eligable, good bye! ")
+      quit()
+
 def menu_call(): #Definition created as the menu.
     menu_option = float(input("Please type 1 to view what consession you are entitled to or press 2 to purchase your tickets? ")) #This numeric input is so users have the option to call the nessasary code which is relevant to them.
 
@@ -82,6 +96,7 @@ def ticket_win():
                 print("Sorry wrong, please try again")
                 guess -= 1
                 print("You have {} tries remaining".format(guess))
+                print({} <  9)
                 continue
     else:
             print("Sorry, you failed")
@@ -92,6 +107,5 @@ def ticket_win():
 
 name = input("Hello, what is your name? ") #This is an imput so the script can be personalized according to their name.
 print("Hello {}, welcome to Henderson High School's Production.".format(name)) #An input to greet them on to the python system.
-menu_call() #Calling the menu definition as its the users first time.
-
+age_check()
 
